@@ -1,6 +1,6 @@
 {% extends 'layouts/base.html' %}
 
-<!-- {% block content %}
+{% block content %}
 
 <form method="POST">
         {% csrf_token %}
@@ -12,22 +12,6 @@
     <h1>Your url short is: </h1> 
     <a href="https://django-shortener.onrender.com/s/{{ id }}" target="_blank">https://django-shortener.onrender.com/s/{{ id }}</a>
 
-{% endif %}
-
-{% endblock %} -->
-
-
-{% block content %}
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" style="background-color: blue; color: white; font-weight: bold;">Shorten</button>
-</form>
-
-{% if id %}
-    <h1 style="color: green;">Tu URL acortada es:</h1>
-    <a href="https://django-shortener.onrender.com/s/{{ id }}" target="_blank" style="color: blue; font-weight: bold;">https://django-shortener.onrender.com/s/{{ id }}</a>
 {% endif %}
 
 {% endblock %}
