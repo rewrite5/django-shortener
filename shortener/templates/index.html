@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Shorten</button>
+    </form>
+
+{% if id %}
+    <h1>Your url short is: </h1> 
+    <a href="https://billybat.pythonanywhere.com/s/{{ id }}" target="_blank">https://billybat.pythonanywhere.com/s/{{ id }}</a>
+
+{% endif %}
+
+{% endblock %}
